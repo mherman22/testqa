@@ -1,10 +1,9 @@
-import { expect } from "./src/expect/expect";
-import { describe } from "./src/describe/describe";
-import { it } from "./src/it/it";
+import { describe, expect, it } from './src/functions';
 
 console.log();
 console.log("<----------------------------- First Test----------------------------->");
 console.log();
+
 describe('Passing Test Suite', () => {
   it('Passing Test Case #1', () => {
     expect('foo').toExist();
@@ -19,6 +18,7 @@ describe('Passing Test Suite', () => {
 console.log();
 console.log("<----------------------------- Second Test----------------------------->");
 console.log();
+
 describe('Failing Test Suite', () => {
   it('Passing Test Case', () => {
     expect(0).toBe(0);
