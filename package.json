@@ -1,0 +1,22 @@
+{
+  "name": "mherman22-qa",
+  "version": "1.0.0",
+  "description": "basic testing framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc index.ts && node index.js"
+  },
+  "keywords": [
+    "describe",
+    "it",
+    "expect"
+  ],
+  "author": "mherman22",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
