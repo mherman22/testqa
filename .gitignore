@@ -1,5 +1,5 @@
 node_modules
-./index.js
-./src/describe/describe.js
-./src/expect/expect.js
-./src/it/it.js
+index.js
+src/describe/describe.js
+src/expect/expect.js
+src/it/it.js
