@@ -15,6 +15,7 @@ export function describe(testSuiteName: string, func: () => void) {
         const errorMessage: string = error.message;
         console.log("// Console errors:");
         console.error(`failed running test suite ${testSuiteName} on test case ${error.testCaseName} with error message ${errorMessage}`);
+        console.error(error.stack);
     }
 }
 
@@ -34,8 +35,7 @@ export function it(testCaseName: string, func: () => void) {
     } catch (error: any) {
         // const errorMessage: string = error.message;
         error.testCaseName = testCaseName;
-        // failed running test suite Failing Test Suite on test case Failing Test Case with error message expected true to be false
-        console.error(error.stack);
+        // console.error(error.stack);
         throw error;
     }
 }
