@@ -13,3 +13,12 @@ This is a basic testing framework implemented for the following functions that a
 - After cloning this repository, `cd` into the project repository and trigger `npm i` to install all the needed dependencies.
 
 - Then trigger `npm start` to get the application running.
+
+## Screenshot of the output on the console
+| No Arbitrary Error Screenshot  | Arbitrary Error Screenshot |
+| ------------- | ------------- |
+| ![console](/Screenshot%20from%202023-01-21%2008-00-29.png "output") | ![console2](/Screenshot%20from%202023-01-21%2008-26-45.png "output2") |
+
+### Contributor(s)
+
+- [mherman22](https://github.com/mherman22)

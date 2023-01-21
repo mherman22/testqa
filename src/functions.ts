@@ -1,26 +1,27 @@
-let testSuiteName: string;
-
 /**
  * 
  * @param testSuiteName 
- * @param callBackFunction 
+ * @param func 
  * should take a string testSuiteName and a callback function, 
  * and define a group of related test cases.
  */
 export function describe(testSuiteName: string, func: () => void) {
+    console.log("// Console logs:");
     console.log(`beginning test suite ${testSuiteName}`);
     try {
         func();
         console.log(`successfully completed test suite ${testSuiteName}`);
-    } catch (error: any) {
-        console.error(`failed running test suite ${testSuiteName} on test case ${error.testCaseName} with error message ${error.message}`);
+    } catch (error:any) {
+        const errorMessage: string = error.message;
+        console.log("// Console errors:");
+        console.error(`failed running test suite ${testSuiteName} on test case ${error.testCaseName} with error message ${errorMessage}`);
     }
 }
 
 /**
  * 
  * @param testCaseName 
- * @param callBackFunction 
+ * @param func 
  * defines a single test case in a test suite and is called within a describe's callback func. 
  * It takes in a string testCaseName and its own callback func, which makes one or more
  *  calls to expect.
@@ -31,7 +32,10 @@ export function it(testCaseName: string, func: () => void) {
         func();
         console.log(`successfully completed test case ${testCaseName}`);
     } catch (error: any) {
-        console.error(`failed running test suite ${testSuiteName} on test case ${testCaseName} with error message ${error.message}`);
+        // const errorMessage: string = error.message;
+        error.testCaseName = testCaseName;
+        // failed running test suite Failing Test Suite on test case Failing Test Case with error message expected true to be false
+        console.error(error.stack);
         throw error;
     }
 }
