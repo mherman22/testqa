@@ -1,3 +1,6 @@
+import { enable } from "colors";
+enable();
+
 /**
  * 
  * @param testSuiteName 
@@ -6,16 +9,14 @@
  * and define a group of related test cases.
  */
 export function describe(testSuiteName: string, func: () => void) {
-    console.log("// Console logs:");
-    console.log(`beginning test suite ${testSuiteName}`);
+    console.log(`${` OK `.bgGreen.black} beginning test suite ${testSuiteName}`);
     try {
         func();
-        console.log(`successfully completed test suite ${testSuiteName}`);
-    } catch (error:any) {
+        console.log(`${` OK `.bgGreen.black} successfully completed test suite ${testSuiteName}`);
+    } catch (error: any) {
         const errorMessage: string = error.message;
-        console.log("// Console errors:");
-        console.error(`failed running test suite ${testSuiteName} on test case ${error.testCaseName} with error message ${errorMessage}`);
-        console.error(error.stack);
+        console.error(`${` FAILED `.bgRed.black} failed running test suite ${testSuiteName} on test case ${error.testCaseName} with error message ${errorMessage}`);
+        console.error(error.stack.red);
     }
 }
 
@@ -29,9 +30,9 @@ export function describe(testSuiteName: string, func: () => void) {
  */
 export function it(testCaseName: string, func: () => void) {
     try {
-        console.log(`beginning test case ${testCaseName}`);
+        console.log(`${` OK `.bgGreen.black} beginning test case ${testCaseName}`);
         func();
-        console.log(`successfully completed test case ${testCaseName}`);
+        console.log(`${` OK `.bgGreen.black} successfully completed test case ${testCaseName}`);
     } catch (error: any) {
         // const errorMessage: string = error.message;
         error.testCaseName = testCaseName;

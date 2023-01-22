@@ -1,3 +1,4 @@
+import { enable } from 'colors';
 import { describe, expect, it } from './src/functions';
 
 console.log();
